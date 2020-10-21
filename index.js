@@ -9,7 +9,9 @@ const app = express();
 conectarDB();
 
 // habilitar cors
-app.use(cors());
+app.use(cors({
+    origin: process.env.REACT_APP_BACKEND_URL
+}));
 
 // habilitar express.json, para leer datos
 app.use(express.json({ extended: true }));
